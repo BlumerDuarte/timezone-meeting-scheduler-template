@@ -69,13 +69,13 @@ export default SlackFunction(
     try {
       // Step 1: Correctly format the meeting time for API usage
       const formattedMeetingTime = formatDateTimeForAPI(
-        //ADD THE meeting_time INPUT,
+        meeting_time,
       );
 
       const meetingConversionResult = await convertTimeZone(
-        // ADD THE from_timezone INPUT,
+        from_timezone,
         formattedMeetingTime,
-        // ADD THE target_timezone INPUT,
+        target_timezone,
       );
 
       if (
@@ -87,9 +87,9 @@ export default SlackFunction(
 
       // Step 2: Convert meeting_time from from_timezone to user timezone
       const calendarConversionResult = await convertTimeZone(
-        // ADD THE from_timezone INPUT,
+        from_timezone,
         formattedMeetingTime,
-        // ADD THE user_timezone INPUT,
+        user_timezone,
       );
 
       if (
